@@ -90,7 +90,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="TextBox">
-                            <Border CornerRadius="5" BorderBrush="Black" x:Name="tb" BorderThickness="1">
+                            <Border CornerRadius="5" BorderBrush="Black" x:Name="tb" BorderThickness="2">
                                 <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                             </Border>
                         </ControlTemplate>

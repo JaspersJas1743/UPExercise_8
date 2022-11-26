@@ -37,11 +37,10 @@ namespace Задание__8
 
         private async void CorrectButtonClick(object sender, RoutedEventArgs e) => await SetValue();
         
-        private async void UnderLineButtonClick(object sender, RoutedEventArgs e)
+        private void UnderLineButtonClick(object sender, RoutedEventArgs e)
         {
             MainBox.SpellCheck.IsEnabled = !MainBox.SpellCheck.IsEnabled;
-            UnderLineButton.Content = MainBox.SpellCheck.IsEnabled ? "Не подчеркивать ошибки" : "Подчеркнуть ошибки";
-            UnderLineButton.Width = MainBox.SpellCheck.IsEnabled ? 156 : 140;
+            UnderLineButton.Content = MainBox.SpellCheck.IsEnabled ? "Не подчеркивать ошибки" : "Подчеркивать ошибки";
         }
 
         private void ResetTheme(object sender, RoutedEventArgs e)
