@@ -1,11 +1,9 @@
 using System;
-using System.Linq;
+using System.IO;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
-using System.Net.Http.Headers;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Задание__8.Utility
 {
@@ -27,7 +25,7 @@ namespace Задание__8.Utility
         public static async Task<List<IncorrectWord>> GetDataAsync(string text)
         {
             string resultString = text;
-            var task = client.GetStreamAsync(URL + String.Join('+', text.Split()));
+            Task<Stream> task = client.GetStreamAsync(URL + String.Join('+', text.Split()));
             return await JsonSerializer.DeserializeAsync<List<IncorrectWord>>(task.Result);
         }
     }

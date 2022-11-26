@@ -11,18 +11,24 @@
             MouseDown="Drag" Height="16" Width="350" HorizontalAlignment="Center"/>
         <TextBlock Text="Введите текст" Height="16" Width="118" FontWeight="Bold" Margin="0 20 0 0"
             Style="{DynamicResource MyTextBlock}" HorizontalAlignment="Center" FontSize="14"/>
-        <TextBox Style="{DynamicResource MyTextBox}" Name="MainBox" Width="330" Height="95" KeyDown="MainBoxKeyDown"
-            HorizontalAlignment="Center" Margin="0 46 0 0" TextWrapping="Wrap">
+        <TextBox Style="{DynamicResource MyTextBox}" Name="MainBox" Width="330" Height="55" KeyDown="MainBoxKeyDown"
+            HorizontalAlignment="Center" Margin="0 46 0 0" TextWrapping="Wrap" MaxLength="120" TextChanged="MainBoxChanged">
             <TextBox.ToolTip>
                 <ToolTip Content="Текст, который нужно исправить" Style="{DynamicResource MyTooltip}" Width="200"/>
             </TextBox.ToolTip>
         </TextBox>
-        <TextBox Style="{DynamicResource MyTextBox}" Name="ResultBox" Width="330" Height="95" 
-            HorizontalAlignment="Center" Margin="0 146 0 0" TextWrapping="Wrap" IsReadOnly="True">
+        <TextBox Style="{DynamicResource MyTextBox}" Name="ResultBox" Width="330" Height="135"
+            HorizontalAlignment="Center" Margin="0 106 0 0" TextWrapping="Wrap" IsReadOnly="True">
             <TextBox.ToolTip>
                 <ToolTip Content="Исправленный текст" Style="{DynamicResource MyTooltip}" Width="130"/>
             </TextBox.ToolTip>
         </TextBox>
+        <TextBlock Text="120" Width="30" Height="16" Margin="302 82 0 0" TextAlignment="Right"
+            Style="{DynamicResource MyTextBlock}" x:Name="CharacterCount">
+            <TextBlock.ToolTip>
+                <ToolTip Content="Осталось символов до ограничения ввода" Style="{DynamicResource MyTooltip}" Width="255"/>
+            </TextBlock.ToolTip>
+        </TextBlock>
         <Button Style="{DynamicResource MyExit}" Click="ExitClick" Margin="0 0 0 0">
             <Button.ToolTip>
                 <ToolTip Content="Закрыть" Style="{DynamicResource MyTooltip}" Width="62"/>
